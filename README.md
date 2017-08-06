@@ -3,6 +3,41 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflection for the rubric points
+
+PID stands for proportional-integral derivative controller and is used in many applications for continuously modulated control. 
+
+### 1. Proportional (Present):
+Poportional can be described as reaction to the "present" situation and adjust the steering angle according to the current given error rate. This does not include the past and future states and leads to an oscillating behavior.  
+
+### 2. Integral (Past):
+The integral term sums up the error rate cver time and is used to detect and compensate for relatively small error values. 
+
+### 3. Derivative (Future):
+The derivative value is used to predict the error value of the future and compensate for overshooting (oscillating).
+
+The following youtube video describes the PID-Controller vividly. 
+[![PID-Controler](https://img.youtube.com/vi/0vqWyramGy8/0.jpg)](https://www.youtube.com/watch?v=0vqWyramGy8)
+
+### Hyperparameter Tuning:
+
+#### throttle  
+I set throttle to a value of 0.1 to find better values for PID easier and faster.
+
+#### PID:
+1. P to 0.2 and I, D to zero. The car was wildly oscillating
+2. Increased D and I to compensate for the oscillation
+3. Repeat step two until the car was driving relatively smooth around the track.
+
+#### Final Parameter: P=0.2, I=0.005, D=0.4
+
+### Future impovemts:
+1. Using a addional PID-Controler to handle the trottle 
+2. Using the twiddle algorithm proposed by Sebastian Thrun to optimize hyperparameters. 
+
+
+---
+
 ## Dependencies
 
 * cmake >= 3.5
